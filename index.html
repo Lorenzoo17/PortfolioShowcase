@@ -27,9 +27,8 @@
       .wordmark { display: inline-flex; align-items: center; gap: 9px; text-decoration: none; font-size: 13px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
       .wordmark::before { width: 10px; height: 10px; border-radius: 3px; background: var(--accent); content: ""; transform: rotate(-8deg); }
       .site-nav { display: flex; gap: 10px; font-size: 15px; color: var(--soft-ink); }
-      .site-nav a { display: inline-flex; min-height: 44px; align-items: center; justify-content: center; padding: 0 15px; border: 1px solid #ffffff29; border-radius: 11px; background: #ffffff08; text-decoration: none; transition: color .18s, background .18s, border-color .18s; }
+      .site-nav a { display: inline-flex; min-height: 44px; align-items: center; justify-content: center; padding: 0 15px; border: 1px solid #ffffff29; border-radius: 11px; background: #ffffff08; text-decoration: none; transition: color .18s, background .18s, border-color .18s, transform .18s; }
       .site-nav a:hover { color: var(--ink); border-color: #ffffff55; background: #ffffff12; }
-      .text-link:hover { color: var(--accent); }
       .intro { position: relative; display: grid; grid-template-columns: minmax(0, 1fr) minmax(220px, .46fr); gap: clamp(20px, 4vw, 58px); align-items: center; align-content: center; min-height: calc(100svh - 74px); padding: 0; }
       .intro > div { position: relative; z-index: 1; }
       .intro::after { display: none; }
@@ -41,7 +40,6 @@
       .intro-copy { max-width: 780px; margin-bottom: 0; color: #d0ced5; font-size: clamp(17px, 2vw, 23px); line-height: 1.55; }
       .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
       .hero-button { display: inline-flex; min-width: 176px; min-height: 54px; align-items: center; justify-content: center; padding: 0 22px; border: 1px solid #ffffff70; border-radius: 11px; color: var(--ink); font-size: 16px; font-weight: 600; text-decoration: none; transition: transform .18s, background .18s, border-color .18s; }
-      .hero-button:hover { transform: translateY(-2px); }
       .hero-button-primary { border-color: var(--accent); background: var(--accent); color: #14282b; }
       .hero-button-primary:hover { background: #83d9df; border-color: #83d9df; }
       .hero-button-secondary:hover { background: #ffffff12; border-color: #ffffff; }
@@ -68,7 +66,7 @@
       .project-grid .project-divider img { width: min(125px, 14vw); }
       .project-grid > .project-section:last-child { grid-column: 1 / -1; width: calc((100% - 26px) / 2); justify-self: center; }
 
-      .project-section { position: relative; isolation: isolate; overflow: hidden; margin-bottom: 0; border: 1px solid #ffffff35; border-radius: 26px; padding: clamp(22px, 3.2vw, 42px); background: linear-gradient(140deg, #ffffff1b 0%, #c7e6e80c 42%, #ffffff0a 100%); box-shadow: inset 0 1px #ffffff35, 0 16px 45px #080e1545; backdrop-filter: blur(20px) saturate(135%); }
+      .project-section { position: relative; isolation: isolate; overflow: hidden; margin-bottom: 0; border: 1px solid #ffffff35; border-radius: 26px; padding: clamp(22px, 3.2vw, 42px); background: linear-gradient(140deg, #ffffff1b 0%, #c7e6e80c 42%, #ffffff0a 100%); box-shadow: inset 0 1px #ffffff35, 0 16px 45px #080e1545; backdrop-filter: blur(20px) saturate(135%); transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease; }
       .project-divider { display: flex; height: clamp(76px, 7vw, 104px); align-items: center; pointer-events: none; }
       .project-divider img { display: block; width: min(142px, 19vw); height: auto; opacity: .48; }
       .project-divider--left { justify-content: flex-start; padding-left: 12%; }
@@ -85,21 +83,25 @@
       .project-description { max-width: 490px; margin-bottom: 21px; color: var(--soft-ink); font-size: 15.5px; line-height: 1.75; }
       .tags { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 24px; }
       .tag { border: 1px solid #ffffff29; border-radius: 999px; padding: 8px 11px; background: #63c4ce12; color: #88d7df; font-size: 11px; }
-      .text-link { display: inline-flex; align-items: center; gap: 8px; color: var(--accent); font-size: 13px; font-weight: 600; text-decoration-thickness: 1px; text-underline-offset: 4px; }
+      .text-link { display: inline-flex; align-items: center; gap: 8px; color: var(--accent); font-size: 13px; font-weight: 600; text-decoration-thickness: 1px; text-underline-offset: 4px; transition: color .18s ease, text-decoration-thickness .18s ease, text-shadow .18s ease; }
+      .text-link span { transition: transform .18s ease; }
+      .text-link:hover { color: #c2f8f8; text-decoration-thickness: 2px; text-shadow: 0 0 14px #63c4ce55; }
+      .text-link:hover span { transform: translate(2px, -2px); }
       .project-credit { max-width: 490px; margin: 14px 0 0; color: #969faa; font-size: 11px; line-height: 1.55; }
       .portfolio-section { margin-top: clamp(74px, 10vw, 132px); }
-      #projects, #tools, #about, #contact { scroll-margin-top: 28px; }
+      #projects, #tools, #about { scroll-margin-top: 28px; }
       #about { margin-bottom: clamp(56px, 8vw, 100px); }
       .glass-panel { border: 1px solid #ffffff35; border-radius: 26px; padding: clamp(24px, 4vw, 48px); background: linear-gradient(140deg, #ffffff1b 0%, #c7e6e80c 48%, #ffffff0a 100%); box-shadow: inset 0 1px #ffffff35, 0 16px 45px #080e1545; backdrop-filter: blur(20px) saturate(135%); }
       .tools-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
-      .tool-item { display: flex; min-height: 118px; flex-direction: column; align-items: center; justify-content: center; gap: 13px; border: 1px solid #ffffff20; border-radius: 18px; padding: 18px 12px; background: #141a214d; color: #e6e8eb; text-align: center; }
+      .tool-item { display: flex; min-height: 118px; flex-direction: column; align-items: center; justify-content: center; gap: 13px; border: 1px solid #ffffff20; border-radius: 18px; padding: 18px 12px; background: #141a214d; color: #e6e8eb; text-align: center; transition: transform .2s ease, border-color .2s ease, background .2s ease; }
       .tool-item img { display: block; width: 42px; height: 42px; object-fit: contain; }
       .tool-item span { font-size: 14px; font-weight: 600; }
       .tool-mark { display: grid; width: 42px; height: 42px; place-items: center; border: 1px solid #ffffff35; border-radius: 12px; background: #63c4ce18; color: var(--accent); font-size: 13px; font-weight: 750; letter-spacing: -.04em; }
+      .tool-mark[hidden] { display: none; }
       .about-panel { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(260px, .85fr); gap: clamp(32px, 7vw, 90px); align-items: center; }
       .about-copy { max-width: 650px; margin: 0; color: #d0ced5; font-size: clamp(17px, 2vw, 21px); line-height: 1.7; }
       .contact-list { display: grid; gap: 12px; }
-      .contact-link { display: flex; min-height: 60px; align-items: center; gap: 14px; border: 1px solid #ffffff24; border-radius: 15px; padding: 12px 16px; background: #141a214d; text-decoration: none; transition: border-color .18s, background .18s; }
+      .contact-link { display: flex; min-height: 60px; align-items: center; gap: 14px; border: 1px solid #ffffff24; border-radius: 15px; padding: 12px 16px; background: #141a214d; text-decoration: none; transition: transform .18s, border-color .18s, background .18s; }
       .contact-link:hover { border-color: #63c4ce88; background: #63c4ce12; }
       .contact-icon { display: grid; width: 34px; height: 34px; flex: 0 0 auto; place-items: center; border: 1px solid #63c4ce66; border-radius: 10px; color: var(--accent); font-size: 13px; font-weight: 700; }
       .contact-detail { display: grid; min-width: 0; gap: 4px; }
@@ -122,6 +124,14 @@
       .project-video { display: block; width: 100%; height: 100%; object-fit: contain; background: #171c22; }
       .site-footer { display: flex; justify-content: space-between; gap: 20px; border-top: 1px solid var(--rule); padding: 25px 0 34px; color: var(--soft-ink); font-size: 12px; }
       .site-footer p { margin: 0; }
+
+      @media (hover: hover) and (prefers-reduced-motion: no-preference) {
+        .project-grid .project-section:hover { transform: translateY(-4px) scale(1.008); border-color: #8bd7df70; box-shadow: inset 0 1px #ffffff40, 0 22px 54px #080e1566; }
+        .tool-item:hover { transform: translateY(-3px) scale(1.025); border-color: #8bd7df70; background: #63c4ce12; }
+        .site-nav a:hover { transform: translateY(-1px) scale(1.03); }
+        .hero-button:hover { transform: translateY(-2px) scale(1.02); }
+        .contact-link:hover { transform: translateX(3px); }
+      }
 
       @media (max-width: 1000px) {
         .project-grid { grid-template-columns: 1fr; }
@@ -182,7 +192,6 @@
           <a href="#projects">Projects</a>
           <a href="#tools">Tools</a>
           <a href="#about">About</a>
-          <a href="#contact">Contact</a>
         </nav>
       </header>
 
@@ -191,10 +200,10 @@
           <div>
             <p class="eyebrow">Portfolio · Computer Engineering</p>
             <h1 id="intro-title">Lorenzo <span class="name-accent">Mascia</span></h1>
-            <p class="intro-copy">Computer Engineering graduate from Politecnico di Torino, specializing in Computer Vision, 3D graphics and XR development.</p>
+            <p class="intro-copy">I’m a Computer Engineering graduate from Politecnico di Torino, focused on Artificial Intelligence, computer vision, 3D graphics and extended reality. I enjoy building interactive systems, immersive experiences and research prototypes.</p>
             <div class="hero-actions">
-              <a class="hero-button hero-button-primary" href="#projects">My projects</a>
-              <a class="hero-button hero-button-secondary" href="#contact">Contact me</a>
+              <a class="hero-button hero-button-primary" href="#projects">Explore selected work</a>
+              <a class="hero-button hero-button-secondary" href="#about">View my profile</a>
             </div>
           </div>
           <img class="hero-character" src="assets/illustrations/portfolio-mascot.png" alt="" aria-hidden="true" width="1339" height="1175">
@@ -203,7 +212,6 @@
         <section id="projects" aria-labelledby="projects-title">
           <div class="section-label">
             <h2 id="projects-title">Selected projects</h2>
-            <span>Two projects per row · one centered when left over</span>
           </div>
 
           <div class="project-grid">
@@ -212,7 +220,7 @@
               <div class="project-copy">
                 <div class="project-number">Project 01 · 2025</div>
                 <h3 id="ssi-title">SSI Metaverse</h3>
-                <p class="project-description">A multi-user immersive prototype built in Unity, where users interact through avatars and manage verifiable identities and credentials. They can selectively request and share information, keeping control over which data they disclose.</p>
+                <p class="project-description">A multi-user immersive prototype built in Unity for Mixed Reality headsets, where users interact through avatars and manage verifiable identities and credentials. They can selectively request and share information, keeping control over which data they disclose.</p>
                 <div class="tags" aria-label="Technologies and topics">
                   <span class="tag">Unity · C#</span>
                   <span class="tag">XR / MRTK</span>
@@ -264,7 +272,7 @@
           </article>
 
           <div class="project-divider project-divider--right" aria-hidden="true">
-            <img src="assets/doodle-accents.svg" alt="" width="360" height="200">
+            <img src="assets/doodles/doodle-controller.svg" alt="" width="360" height="200">
           </div>
 
           <article class="project-section" aria-labelledby="murder-title">
@@ -321,7 +329,7 @@
           </article>
 
           <div class="project-divider project-divider--center" aria-hidden="true">
-            <img src="assets/doodle-accents.svg" alt="" width="360" height="200">
+            <img src="assets/doodles/doodle-terminal.svg" alt="" width="360" height="200">
           </div>
 
           <article class="project-section" aria-labelledby="saliency-title">
@@ -382,7 +390,7 @@
           </article>
 
           <div class="project-divider project-divider--left" aria-hidden="true">
-            <img src="assets/doodle-accents.svg" alt="" width="360" height="200">
+            <img src="assets/doodles/doodle-spark.svg" alt="" width="360" height="200">
           </div>
 
           <article class="project-section" aria-labelledby="telepresence-title">
@@ -423,14 +431,14 @@
           </div>
           <div class="glass-panel">
             <div class="tools-grid" aria-label="Tools and technologies">
-              <div class="tool-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/unity/unity-original.svg" alt="" aria-hidden="true" loading="lazy"><span>Unity</span></div>
-              <div class="tool-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/opengl/opengl-original.svg" alt="" aria-hidden="true" loading="lazy"><span>OpenGL</span></div>
-              <div class="tool-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/opencv/opencv-original.svg" alt="" aria-hidden="true" loading="lazy"><span>OpenCV</span></div>
-              <div class="tool-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-original.svg" alt="" aria-hidden="true" loading="lazy"><span>C#</span></div>
-              <div class="tool-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" alt="" aria-hidden="true" loading="lazy"><span>Git</span></div>
+              <div class="tool-item"><img src="https://raw.githubusercontent.com/devicons/devicon/v2.17.0/icons/unity/unity-original.svg" alt="" aria-hidden="true" loading="lazy"><span>Unity</span></div>
+              <div class="tool-item"><img src="https://raw.githubusercontent.com/devicons/devicon/v2.17.0/icons/opengl/opengl-original.svg" alt="" aria-hidden="true" loading="lazy"><span>OpenGL</span></div>
+              <div class="tool-item"><img src="https://raw.githubusercontent.com/devicons/devicon/v2.17.0/icons/opencv/opencv-original.svg" alt="" aria-hidden="true" loading="lazy"><span>OpenCV</span></div>
+              <div class="tool-item"><img src="https://raw.githubusercontent.com/devicons/devicon/v2.17.0/icons/csharp/csharp-original.svg" alt="" aria-hidden="true" loading="lazy"><span>C#</span></div>
+              <div class="tool-item"><img src="https://raw.githubusercontent.com/devicons/devicon/v2.17.0/icons/git/git-original.svg" alt="" aria-hidden="true" loading="lazy"><span>Git</span></div>
               <div class="tool-item"><span class="tool-mark" aria-hidden="true">MR</span><span>MRTK</span></div>
-              <div class="tool-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/intel/intel-original.svg" alt="" aria-hidden="true" loading="lazy"><span>Intel RealSense</span></div>
-              <div class="tool-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/blender/blender-original.svg" alt="" aria-hidden="true" loading="lazy"><span>Blender</span></div>
+              <div class="tool-item"><img class="tool-logo" src="https://cdn.simpleicons.org/intel/0071C5" alt="" aria-hidden="true" loading="lazy"><span class="tool-mark" aria-hidden="true" hidden>IR</span><span>Intel RealSense</span></div>
+              <div class="tool-item"><img src="https://raw.githubusercontent.com/devicons/devicon/v2.17.0/icons/blender/blender-original.svg" alt="" aria-hidden="true" loading="lazy"><span>Blender</span></div>
             </div>
           </div>
         </section>
@@ -441,8 +449,8 @@
             <span>Background &amp; contact</span>
           </div>
           <div class="glass-panel about-panel">
-            <p class="about-copy">I’m a Computer Engineering graduate from Politecnico di Torino, focused on computer vision, 3D graphics and extended reality. I enjoy building interactive systems, immersive experiences and research prototypes.</p>
-            <div class="contact-list" id="contact" aria-label="Contact information">
+            <p class="about-copy">Want to learn more about me? Feel free to get in touch or take a look at my CV.</p>
+            <div class="contact-list" aria-label="Contact information">
               <a class="contact-link" href="https://www.linkedin.com/in/lorenzo-mascia-829809294" target="_blank" rel="noreferrer">
                 <span class="contact-icon" aria-hidden="true">in</span>
                 <span class="contact-detail"><small>LinkedIn</small><span>linkedin.com/in/lorenzo-mascia-829809294</span></span>
@@ -450,6 +458,10 @@
               <a class="contact-link" href="mailto:lorenzomascia17@gmail.com">
                 <span class="contact-icon" aria-hidden="true">@</span>
                 <span class="contact-detail"><small>Email</small><span>lorenzomascia17@gmail.com</span></span>
+              </a>
+              <a class="contact-link" href="assets/cv/Lorenzo_Mascia_CV.pdf" target="_blank" rel="noreferrer">
+                <span class="contact-icon" aria-hidden="true">CV</span>
+                <span class="contact-detail"><small>Curriculum vitae</small><span>View my CV (PDF) ↗</span></span>
               </a>
             </div>
           </div>
@@ -463,6 +475,14 @@
     </div>
 
     <script>
+      document.querySelectorAll(".tool-logo").forEach((logo) => {
+        logo.addEventListener("error", () => {
+          logo.hidden = true;
+          const fallback = logo.nextElementSibling;
+          if (fallback?.classList.contains("tool-mark")) fallback.hidden = false;
+        }, { once: true });
+      });
+
       const projectGalleries = {
         "ssi-metaverse": [
           { file: "ssi_1.png", alt: "Biometric charts and a 3D avatar in the SSI Metaverse prototype", caption: "Biometric metrics in the immersive environment" },
